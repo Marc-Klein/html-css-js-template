@@ -22,10 +22,34 @@ console.log(`
 - the headline should be blue
 `);
 
+//1&2
+const element = document.querySelector("#root");
+
+element.innerHTML = `
+<h1 class = "main-html">it works</h1>
+`;
+
+const style = `
+<style id="main-style">
+${mainheadlinestyles}
+</style>`;
+
 // 1.
+// const element = document.querySelector("#root");
+// element.innerHTML = "<h1> it works </h1>";
 
 // 2.
-
+// const headline = document.querySelector("h1");
+// const h1Class = headline.classList.add("h1-class");
+// headline.append(h1Class);
 // 3.
+// const head = document.querySelector("head");
+// const style = document.createElement("style");
+// head.append(style);
+// style.id = "main-style";
 
 // 4.
+// style.innerHTML = `
+// .h1-class {
+//     color:blue;
+// }`;

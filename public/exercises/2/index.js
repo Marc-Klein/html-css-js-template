@@ -1,3 +1,6 @@
+// const { randomInt } = require("crypto");
+// const { arrayBuffer } = require("stream/consumers");
+
 console.log(`
 ┏━━━━━━━━━━━━━━┓
 ┃  EXERCISE 2  ┃
@@ -27,3 +30,41 @@ console.log(`
 - Choose a font from https://fonts.google.com/
 - Use the font for your card
 `);
+
+//Es wird zuerst eine Random Funktion erstellt
+const random = n => Math.round(Math.random() * n);
+const randomElement = array => array[random(array.length - 1)];
+
+//Hier werden die Namen und Hobbies fuer die random Funktion festgelegt
+const firstNames = ["Alex", "Daniel", "Max"];
+const lastNames = ["Meyer", "Schmidt", "Mueller"];
+const hobbies = ["Weightlifting", "Golf", "Hikeing"];
+const gender = ["women", "men"];
+
+//Hier werden die random Funktionen in variablen abgelegt
+const ranFirstName = randomElement(firstNames);
+const ranLastName = randomElement(lastNames);
+// const ranHobbies = randomElement(hobbies);
+// wird direkt in der Zeile aufgerufen, so wird jedes Hobbie
+// neu gerandomized
+const ranGender = randomElement(gender);
+const ranImg = random(100);
+
+//ggf. als Konstante hinterlegbar
+document.querySelector("#root").innerHTML += /*html*/ `
+
+<div class="card">
+  <header class="card card__header">
+    <h3 class="card card__randomName"> ${ranFirstName} ${ranLastName}</h3>
+    <img src="https://randomuser.me/api/portraits/${ranGender}/${ranImg}.jpg" alt="Picture of ${ranFirstName} ${ranLastName}" />
+    <section class="card card__content">
+      <h4>My Hobbies</h4>
+      <ul class="card card__hobbies">
+        <li class="card__hobbies--items">${randomElement(hobbies)}</li>
+        <li class="card__hobbies--items">${randomElement(hobbies)}</li>
+        <li class="card__hobbies--items">${randomElement(hobbies)}</li>
+      </ul>
+    </section>
+  </header>
+</div>
+`;

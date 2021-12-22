@@ -44,7 +44,7 @@ Run the tests via 'npm run cypress:open'
 All tests should pass
 
 `);
-
+//hier wird das r
 const root = document.querySelector("#root");
 const header = document.createElement("header");
 const sidebar = document.createElement("aside");
